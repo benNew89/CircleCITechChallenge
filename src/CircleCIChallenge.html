@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>CircleCI Tech Challenge</title>
+    <style>
+      html{
+        font-family:sans-serif;
+        -webkit-text-size-adjust:100%;
+        -ms-text-size-adjust:100%
+      }
+      .top-banner {
+        background: #337ab7;
+        color: white;
+      }
+
+      .top-banner p {
+        max-width: 75%;
+        margin: 1em auto 2em;
+      }
+
+      .text-center{
+        text-align:center
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-banner text-center">
+      <div class="container">
+        <h1>CircleCI Tech Challenge</h1>
+        <p>A basic page using HTML and JavaScript to demonstrate testing an application and building it using CircleCI</p>
+      </div>
+    </div>
+    <main>
+      <div class="container text-center">
+        <div class="row">
+          <button class="btn btn-lg btn-primary">Click me!</button>
+        </div>
+        <div class="row">
+            <p id="button-reply"></p>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      (function() {
+        const buttonMessage = "You've clicked the button!";
+
+        const showText = () => {
+          document.querySelector('#button-reply').innerHTML = buttonMessage;
+        }
+        const button = document.querySelector('button');
+        button.addEventListener('click', showText);
+      })();
+    </script>
+  </body>
+</html>
