@@ -6,21 +6,29 @@ orbs:
 jobs:
   test-node:
     # Install node dependencies and run tests
-    executor: node/default
+    machine:
+      image: ubuntu-2204:current
     environment:
       JEST_JUNIT_OUTPUT_DIR: ./test-results/
     steps:
-      - checkout
-      - node/install-packages:
-          cache-path: ~/project/node_modules
-          override-ci-command: npm install
+      # - checkout
+      # - node/install-packages:
+      #     cache-path: ~/project/node_modules
+      #     override-ci-command: npm install
+      # - run:
+      #     command: npm install jest-junit
+      # - run:
+      #     name: Run tests
+      #     command: npm run test --ci --runInBand --reporters=default --reporters=jest-junit
+      # - store_test_results:
+      #     path: ./test-results/
       - run:
-          command: npm install jest-junit
-      - run:
-          name: Run tests
-          command: npm run test --ci --runInBand --reporters=default --reporters=jest-junit
-      - store_test_results:
-          path: ./test-results/
+          name: Install NVM
+          command: | 
+            curl \
+            -o- \
+            https://raw.githubusercontent.com/nvm-sh/nvm/v20.12.0/install.sh \
+            | bash +x
   deploy:
     # This is an example deploy job, not actually used by the workflow
     docker:
