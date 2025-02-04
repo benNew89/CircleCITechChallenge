@@ -33,8 +33,8 @@ jobs:
       - run: nvm -v
       - run: echo $NVM_DIR
       - run:
-        name: Install node
-        command: |
+          name: Install node
+          command: |
             timeout 180 $SHELL -c '. "${NVM_DIR}/nvm.sh" && nvm install "v20.12.0"' || {
                 echo "Failed to install Node.js within the timeout period."
                 exit 1
