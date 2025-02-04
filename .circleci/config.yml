@@ -31,7 +31,8 @@ jobs:
             https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh \
             | bash +x
       - run: nvm -v
-      - run: ls ~/.nvm
+      - run: echo $NVM_DIR
+      #- run: ls ~/.nvm
       # - run:
       #   name: Install node
       #   command: |
