@@ -31,6 +31,14 @@ jobs:
             https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh \
             | bash +x
       - run: nvm -v
+      - run: ls ~/.nvm
+      # - run:
+      #   name: Install node
+      #   command: |
+      #       timeout 180 $SHELL -c '. "${NVM_DIR}/nvm.sh" && nvm install "v20.12.0"' || {
+      #           echo "Failed to install Node.js within the timeout period."
+      #           exit 1
+      #       }
   deploy:
     # This is an example deploy job, not actually used by the workflow
     docker:
