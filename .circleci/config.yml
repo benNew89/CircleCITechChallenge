@@ -30,6 +30,7 @@ jobs:
             -o- \
             https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh \
             | bash +x
+      - run: nvm -v
   deploy:
     # This is an example deploy job, not actually used by the workflow
     docker:
